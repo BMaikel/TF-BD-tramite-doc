@@ -1,7 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
+from database import Database
 
 app = Flask(__name__)
 app.secret_key = "MySecretKey"
+
+database = Database()
 
 @app.route("/")
 def index():   
@@ -11,11 +14,21 @@ def index():
 def buscar():   
     return render_template("buscar.html")
 
-@app.route("/login")
-def login():   
-    return render_template("login.html")
+#LOGIN ------------------------------------------------------------
+@app.route("/login", methods = ["GET", "POST"])
+def login():
+    if request.method == "POST":
+        usuario = request.form["user"]
+        password = request.form["pass"]
+        respuesta = database.select_user(usuario, password)
+        if respuesta != None:
+            return redirect(f"/db/{respuesta[1]}")
+        else:
+            return redirect(url_for("login"))
+    else:
+        return render_template("login.html")
 
-#DASHBOARD
+#DASHBOARD ---------------------------------------------------------
 @app.route("/db/<idUser>")
 def db(idUser):   
     a = idUser
@@ -27,6 +40,6 @@ def p1(idUser):
     return render_template("p1.html", data = a)
 
 
-#Ejecutar la aplicación
+#Ejecutar la aplicación ---------------------------------------------
 if __name__ == "__main__":
     app.run(debug = True)
