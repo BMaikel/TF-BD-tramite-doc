@@ -4,12 +4,13 @@ connection = pymysql.connect(
             host = "localhost",
             user = "root",
             password = "",
-            db = "tf_test2")
+            db = "bbdd_09_12")
 
 cursor = connection.cursor()
 
-sql = f"""SELECT * FROM usuario WHERE user = "alex1" AND pass = "alex1";""" #Sentencia SQL
+sql = f"""SELECT * FROM emp;""" #Sentencia SQL
 cursor.execute(sql)
-r = cursor.fetchone() #Un unico registro
-print(r)
+r = cursor.fetchall() #Un unico registro
 connection.close()
+
+print(type(r))
