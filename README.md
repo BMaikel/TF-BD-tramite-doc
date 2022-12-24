@@ -1,11 +1,18 @@
-LA MOLINA - UNALM
-# TF_BBDD
-Prototipo: Sistema de trámite documentario.\
-Intento de realizar el prototipo en python usando el módulo Flask.
+MOLINA - UNALM
+# TRABAJO FINAL: Sistema de Gestión de Base de Datos I
+### Prototipo: Sistema de trámite documentario
 
-![](/img_readme/buscador_img.PNG)
-![](/img_readme/login_img.PNG)
-![](/img_readme/p1_img.PNG)
+Este prototipo es parte del trabajo final del curso: Sistema de Gestión de Base de Datos I, ciclo 2022-II
+
+#### Integrantes:
+| Nombre                             | Código      |
+|------------------------------------|-------------|
+| Bañares Gutierrez, Michel Alexis   | 20210824    |
+
+
+![](/img_readme/Login.PNG)
+![](/img_readme/dashboard.PNG)
+![](/img_readme/registrar.PNG)
  
 ## PASOS PARA PROBAR EL PROYECTO:
 1. Descargar el repositorio.
