@@ -7,11 +7,11 @@ Este prototipo es parte del trabajo final del curso: Sistema de Gestión de Base
 #### Integrantes:
 | Nombre                              | Código      |
 |-------------------------------------|-------------|
-| Geraldine Gianella Geronimo Oscanoa |
+| Geraldine Gianella Geronimo Oscanoa | 20210836    |
 | Michel Alexis Bañares Gutierrez     | 20210824    |
-| André Benjamín Castillo Morín       | 
-| Alex Jesus Flores Taco              | 
-| Edwar Frank Carrasco Castañeda      |  
+| André Benjamín Castillo Morín       |  20210829   |
+| Alex Jesus Flores Taco              | 20210833    |
+| Edwar Frank Carrasco Castañeda      |  20210827   |
 
 
 ![](/img_readme/Login.PNG)
