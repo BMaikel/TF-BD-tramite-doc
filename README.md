@@ -5,9 +5,13 @@ MOLINA - UNALM
 Este prototipo es parte del trabajo final del curso: Sistema de Gestión de Base de Datos I, ciclo 2022-II
 
 #### Integrantes:
-| Nombre                             | Código      |
-|------------------------------------|-------------|
-| Bañares Gutierrez, Michel Alexis   | 20210824    |
+| Nombre                              | Código      |
+|-------------------------------------|-------------|
+| Geraldine Gianella Geronimo Oscanoa |
+| Michel Alexis Bañares Gutierrez     | 20210824    |
+| André Benjamín Castillo Morín       | 
+| Alex Jesus Flores Taco              | 
+| Edwar Frank Carrasco Castañeda      |  
 
 
 ![](/img_readme/Login.PNG)
