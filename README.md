@@ -14,6 +14,8 @@ Este prototipo es parte del trabajo final del curso: Sistema de Gestión de Base
 | Edwar Frank Carrasco Castañeda      |  20210827   |
 
 
+![](/img_readme/inicio.PNG)
+
 ![](/img_readme/Login.PNG)
 
 ![](/img_readme/dashboard.PNG)
