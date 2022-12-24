@@ -15,32 +15,29 @@ Este prototipo es parte del trabajo final del curso: Sistema de Gestión de Base
 
 
 ![](/img_readme/Login.PNG)
+
 ![](/img_readme/dashboard.PNG)
+
 ![](/img_readme/registrar.PNG)
  
 ## PASOS PARA PROBAR EL PROYECTO:
 1. Descargar el repositorio.
-2. Deven descargar el modulo virtualenv, el proyecto usa un entorno virtual con todos los módulos a usar.
-~~~ python
-#Ver módulos instalados que tienes:
-pip list
-~~~
-~~~ python
-#Si no tienes virutalenv lo instalas:
-pip install virtualenv
-~~~
-3. Abrir el proyecto con su editor favorito, en mi caso VsCode.
-![](/img_readme/vscode_img.PNG)
-4. Activar el entorno virtual.
-~~~ python
-#En la terminal ejecutar:
-.\env\Scripts\activate
-#Sabrán que se activó porque veran la terminal de esta forma:
-~~~
-![](/img_readme/terminal_img.PNG)
-5. Ahora solo ejecutan el archivo app.py dentro de la carpeta app.
 
-6. Para salir, primero debes desactivar el entorno virtual.
+2. Deven descargar el modulo virtualenv, el proyecto usa un entorno virtual con todos los módulos a usar.
+
+3. Abrir el proyecto con su editor favorito, en mi caso VsCode.
+
+![](/img_readme/vscode_img.PNG)
+
+4. En su editor de SQL favorito ejecutar el script "script_tf.sql" para crear la base de datos que utiliza el prototipo.
+
+5. Ejecutar el archivo app.py ubicado dentro de la carpeta app.
+
+6. Ingresar a: [](http://127.0.0.1:5000/login). Es aquí donde se despliega el proyecto.
+
+7. Podemos empezar a probar las primeras funcionalidades del prototipo, como la busqueda de usuarios registrados en la base de datos, insertar un documento en la base de datos, etc.
+
+8. Para salir, primero debes desactivar el entorno virtual.
 ~~~ python
 #En la terminal ejecutar:
 deactivate
