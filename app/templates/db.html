@@ -114,9 +114,9 @@
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i class="fa-solid fa-folder-open me-2"></i>UNALM</div>
             <div class="list-group list-group-flush my-3">
-                <a href="/db/{{data.0.1}}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                <a href="/db/{{data.2}}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="/pag1/{{data.0.1}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="/pag1/{{data.2}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-project-diagram me-2"></i>Página 1</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-chart-line me-2"></i>Página 2</a>
@@ -239,8 +239,8 @@
                                     <td>{{ i.5 }}</td>
                                     <td>{{ i.6 }}</td>
                                     <td>
-                                        <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_editar_">Editar</button>
-                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_eliminar_">Eliminar</button>
+                                        <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_editar_{{i.0}}">Editar</button>
+                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_eliminar_{{i.0}}">Eliminar</button>
                                     </td>
                                 </tr>
                                 {% endfor %}                       
@@ -257,7 +257,6 @@
     <!--MODALS-->
 
 
-
     <!-- Modal -->
     <!--ModalRegistro-->
     <div class="modal fade" id="ModalRegistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -268,7 +267,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
             
-                <form action="/db/{{data.0.1}}" method = "POST">   
+                <form action="/db/{{data.2}}" method = "POST">   
                     <div class="modal-body">
         
                         <div class="row mb-3">
@@ -351,6 +350,82 @@
             </div>
         </div>
     </div>
+    {% for i in data.1 %}
+    <!--MODAL EDITAR Y ELIMINAR-->
+             <!-- Modal_EDITAR -->
+                    <div class="modal fade" id="Modal_editar_{{i.0}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">EDITAR CORREO</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="/editar/{{data.2}}/{{i.0}}" method = "POST">
+                                    <div class="modal-body">
+                                        <div class="row mb-3">
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="ID Documento" aria-label="First name" name = "r_id_doc" value="{{i.0}}">
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="Emisor" aria-label="Last name" name = "r_emisor" value="{{i.1}}">
+                                            </div>
+                                        </div>
+                
+                                        <div class="row mb-3">
+                                            <div class="col ">
+                                                <input type="text" class="form-control" placeholder="Receptor" aria-label="First name" name = "r_receptor" value="{{i.2}}">
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="Proveido" aria-label="Last name" name = "r_proveido" value="{{i.3}}">
+                                            </div>
+                                        </div>
+                
+                                        <div class="row mb-3">
+                                            <div class="col ">
+                                                <input type="text" class="form-control" placeholder="Motivo" aria-label="First name" name = "r_motivo" value="{{i.4}}">
+                                            </div>
+                                        </div>
+                
+                                        <div class="row mb-3">
+                                            <div class="col ">
+                                                <input type="text" class="form-control" placeholder="Tipo de clave" aria-label="First name" name = "r_tipo_clave" value="{{i.5}}">
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="Tipo de documento" aria-label="Last name" name = "r_tipo_doc" value="{{i.6}}">
+                                            </div>
+                                        </div>
+                
+                                        <input type="file" class="form-control" aria-label="Subir documento" name = "file_doc">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="submit" class="btn btn-warning" data-bs-dismiss="modal">Editar documento</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal_ELIMINAR -->
+                    <div class="modal fade" id="Modal_eliminar_{{i.0}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">ELIMINAR CORREO</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6>¿Seguro que desea eliminar?</h6>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <a href="/eliminar/{{data.2}}/{{i.0}}" class="btn btn-danger" role="button">Eliminar correo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    {% endfor %}
     <script>
         var el = document.getElementById("wrapper");
         var toggleButton = document.getElementById("menu-toggle");

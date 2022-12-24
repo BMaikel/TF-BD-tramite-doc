@@ -31,7 +31,8 @@ def login():
 #DASHBOARD ---------------------------------------------------------
 @app.route("/db/<idUser>", methods = ["GET", "POST"])
 def db(idUser):
-
+    #id del usuario
+    user =idUser
     # Buscar sus datos de empleado a partir de su usuario   
     empleado = database.buscar_empleado(idUser)
 
@@ -50,13 +51,34 @@ def db(idUser):
         database.insertar_documento(id_doc, emisor, receptor, proveido, motivo, palabra_clave, tipo_doc)
         return redirect(f"/db/{idUser}")
         
-    return render_template("db.html", data = [empleado, ver_docs])
+    return render_template("db.html", data = [empleado, ver_docs, user])
 
 
 @app.route("/pag1/<idUser>")
 def pag1(idUser):   
     a = idUser
     return render_template("pag1.html", data = a)
+
+
+@app.route("/editar/<user>/<idDoc>", methods = ["POST"])
+def editar_doc(user,idDoc):
+    if request.method == "POST":
+        id_Doc = idDoc
+        emisor = request.form["r_emisor"]
+        receptor = request.form["r_receptor"]
+        proveido = request.form["r_proveido"]
+        motivo = request.form["r_motivo"]
+        palabra_clave = request.form["r_tipo_clave"]
+        tipo_doc = request.form["r_tipo_doc"]
+        database.editar_documento(id_Doc,emisor,receptor,proveido,motivo,palabra_clave,tipo_doc)
+        return redirect(f"/db/{user}")
+
+
+@app.route("/eliminar/<user>/<string:id>")
+def eliminar_doc(user,id):
+
+    database.eliminar_documento(id)
+    return redirect(f"/db/{user}")
 
 
 #Ejecutar la aplicación ---------------------------------------------

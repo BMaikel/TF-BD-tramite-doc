@@ -62,5 +62,25 @@ class Database():
         except Exception as e:
             raise
 
+    def editar_documento(self, id, emisor, receptor, proveido, motivo, palabra_clave, tipo_documento):
+        sql = f"""UPDATE documento SET emisor = "{emisor}", receptor = "{receptor}", 
+        proveido = "{proveido}", motivo = "{motivo}", palabra_clave = "{palabra_clave}",
+        tipo_documento = "{tipo_documento}" WHERE id_doc = "{id}" """
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+
+        except Exception as e:
+            raise        
+
+    def eliminar_documento(self, idDoc):
+        sql = f"""DELETE FROM documento WHERE id_doc='{idDoc}';"""
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+
+        except Exception as e:
+            raise
+
     def close(self):
         self.connection.close() #Es necesario terminar la conección con la base de datos
