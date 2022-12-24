@@ -114,9 +114,9 @@
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i class="fa-solid fa-folder-open me-2"></i>UNALM</div>
             <div class="list-group list-group-flush my-3">
-                <a href="/db/{{data}}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                <a href="/db/{{data.0.1}}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="/p1/{{data}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="/pag1/{{data.0.1}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-project-diagram me-2"></i>Página 1</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-chart-line me-2"></i>Página 2</a>
@@ -150,7 +150,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user me-2"></i>{{data}}
+                                <i class="fas fa-user me-2"></i>{{data.0.1}}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -164,51 +164,52 @@
             <!--FIN---------------------NAV-->
             <div class="container-fluid px-4">
                 <div class="row g-3 my-2">
+
                     <div class="col-md-3">
-                        <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded" style="background-color:#3483d6 ;">
+                        <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded" style="background-color:#ffc107 ;">
                             <div>
-                                <h3 class="fs-2" style = "color: white ;">720</h3>
-                                <p class="fs-5" style = "color: white;">Products</p>
+                                <h3 class="fs-2" style = "color: rgb(0, 0, 0) ;">4</h3>
+                                <p class="fs-5" style = "color: rgb(0, 0, 0);">Online users</p>
                             </div>
-                            <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="fa-solid fa-users-gear primary-text border secondary-bg fs-1 rounded-full p-3"></i>
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded" style="background-color:#db251d;">
+                        <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded" style="background-color:#28a745;">
                             <div>
-                                <h3 class="fs-2" style = "color: white ;">4920</h3>
-                                <p class="fs-5" style = "color: white ;">Sales</p>
+                                <h3 class="fs-2" style = "color: white ;">53%</h3>
+                                <p class="fs-5" style = "color: white ;">Bounce Rate</p>
                             </div>
-                            <i
-                                class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="fa-sharp fa-solid fa-chart-simple primary-text border secondary-bg fs-1 rounded-full p-3"></i>
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded" style="background-color: #458e5d ;">
+                        <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded" style="background-color:#17a2b8;">
                             <div>
-                                <h3 class="fs-2" style = "color: white ;">3899</h3>
-                                <p class="fs-5" style = "color: white ;">Delivery</p>
+                                <h3 class="fs-2" style = "color: white ;">1021</h3>
+                                <p class="fs-5" style = "color: white ;">Documents</p>
                             </div>
-                            <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="fa-solid fa-folder-open primary-text border secondary-bg fs-1 rounded-full p-3"></i>
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded" style="background-color: #3483d6 ;">
+                        <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded" style="background-color: #dc3545 ;">
                             <div>
-                                <h3 class="fs-2" style = "color: white ;">%25</h3>
-                                <p class="fs-5" style = "color: white ;">Increase</p>
+                                <h3 class="fs-2" style = "color: rgb(255, 255, 255) ;">65</h3>
+                                <p class="fs-5" style = "color: rgb(255, 255, 255) ;">Unique Visitors</p>
                             </div>
-                            <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="fa-solid fa-chart-pie primary-text border secondary-bg fs-1 rounded-full p-3"></i>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="row my-5">
                     <div class="d-flex mb-3">
-                        <h3 class="fs-4 me-5">Registro de documentos</h3>
+                        <h3 class="fs-4 me-5">REGISTRO DE DOCUMENTOS</h3>
                         <button class="btn btn-sm btn-secondary me-3" type="button" data-bs-toggle="modal" data-bs-target="#ModalRegistro">Registrar</button>
                         <button class="btn btn-sm btn-secondary me-3" type="button" data-bs-toggle="modal" data-bs-target="#ModalTraslado">Trasladar</button>
                         <button class="btn btn-sm btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#ModalDerivo">Derivar</button>
@@ -217,32 +218,34 @@
                         <table class="table bg-white rounded shadow-sm  table-hover">
                             <thead>
                                 <tr>
-                                    <th scope="col" width="50">#</th>
-                                    <th scope="col">Product</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Price</th>
+                                    <th scope="col">IdDoc</th>
+                                    <th scope="col">Emisor</th>
+                                    <th scope="col">Receptor</th>
+                                    <th scope="col">Proveido</th>
+                                    <th scope="col">Motivo</th>
+                                    <th scope="col">Palabra clave</th>
+                                    <th scope="col">Tipo de documento</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for i in data.1 %}
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Television</td>
-                                    <td>Jonny</td>
-                                    <td>$1200</td>
+                                    <td>{{ i.0 }}</td>
+                                    <td>{{ i.1 }}</td>
+                                    <td>{{ i.2 }}</td>
+                                    <td>{{ i.3 }}</td>
+                                    <td>{{ i.4 }}</td>
+                                    <td>{{ i.5 }}</td>
+                                    <td>{{ i.6 }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_editar_">Editar</button>
+                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_eliminar_">Eliminar</button>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Laptop</td>
-                                    <td>Kenny</td>
-                                    <td>$750</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Laptop</td>
-                                    <td>Kenny</td>
-                                    <td>$750</td>
-                                </tr>                          
+                                {% endfor %}                       
                             </tbody>
+                            
                         </table>
                     </div>
                 </div>
@@ -261,17 +264,55 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">REGISTRAR DOCUMENTO</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            <div class="modal-body">
-                REGISTRO
-            </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+            
+                <form action="/db/{{data.0.1}}" method = "POST">   
+                    <div class="modal-body">
+        
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="ID Documento" aria-label="First name" name = "r_id_doc">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Emisor" aria-label="Last name" name = "r_emisor">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col ">
+                                <input type="text" class="form-control" placeholder="Receptor" aria-label="First name" name = "r_receptor">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Proveido" aria-label="Last name" name = "r_proveido">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col ">
+                                <input type="text" class="form-control" placeholder="Motivo" aria-label="First name" name = "r_motivo">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col ">
+                                <input type="text" class="form-control" placeholder="Tipo de clave" aria-label="First name" name = "r_tipo_clave">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Tipo de documento" aria-label="Last name" name = "r_tipo_doc">
+                            </div>
+                        </div>
+
+                        <input type="file" class="form-control" aria-label="Subir documento" name = "file_doc">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <!--ModalTraslado-->

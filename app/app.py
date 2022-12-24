@@ -29,15 +29,34 @@ def login():
         return render_template("login.html")
 
 #DASHBOARD ---------------------------------------------------------
-@app.route("/db/<idUser>")
-def db(idUser):   
-    a = idUser
-    return render_template("db.html", data = a)
+@app.route("/db/<idUser>", methods = ["GET", "POST"])
+def db(idUser):
 
-@app.route("/p1/<idUser>")
-def p1(idUser):   
+    # Buscar sus datos de empleado a partir de su usuario   
+    empleado = database.buscar_empleado(idUser)
+
+    # Documentos:
+    ver_docs = database.mostrar_documentos()
+
+    if request.method == "POST":
+        id_doc= request.form["r_id_doc"]
+        emisor = request.form["r_emisor"]
+        receptor = request.form["r_receptor"]
+        proveido = request.form["r_proveido"]
+        motivo = request.form["r_motivo"]
+        palabra_clave = request.form["r_tipo_clave"]
+        tipo_doc = request.form["r_tipo_doc"]
+
+        database.insertar_documento(id_doc, emisor, receptor, proveido, motivo, palabra_clave, tipo_doc)
+        return redirect(f"/db/{idUser}")
+        
+    return render_template("db.html", data = [empleado, ver_docs])
+
+
+@app.route("/pag1/<idUser>")
+def pag1(idUser):   
     a = idUser
-    return render_template("p1.html", data = a)
+    return render_template("pag1.html", data = a)
 
 
 #Ejecutar la aplicación ---------------------------------------------
