@@ -20,7 +20,10 @@ Este prototipo es parte del trabajo final del curso: Sistema de Gestión de Base
 
 ![](/img_readme/registrar.PNG)
  
+![](/img_readme/buscar.PNG)
+
 ## PASOS PARA PROBAR EL PROYECTO:
+
 1. Descargar el repositorio.
 
 2. Deven descargar el modulo virtualenv, el proyecto usa un entorno virtual con todos los módulos a usar.
