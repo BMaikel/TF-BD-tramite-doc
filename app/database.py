@@ -52,6 +52,71 @@ class Database():
         except Exception as e:
             raise
 
+    def buscar_documento(self, busqueda):
+        nn = [i for i, e in enumerate(busqueda) if e != ""]
+        valores = ["motivo","emisor","tipo_documento","palabra_clave"]
+        r = []
+        if len(nn) != 0:
+            for i in nn:
+                r.append(valores[i])
+            
+            if len(r) == 1:
+                sql = f"""SELECT * FROM documento WHERE {r[0]} = "{busqueda[nn[0]]}" """
+                try:
+                    self.cursor.execute(sql)
+                    respuesta = self.cursor.fetchall()
+            
+                    return respuesta #Todos los registros
+
+                except Exception as e:
+                    raise
+
+            elif len(r) == 2:
+                sql = f"""SELECT * FROM documento WHERE {r[0]} = "{busqueda[nn[0]]}" AND {r[1]} = "{busqueda[nn[1]]}" """
+                try:
+                    self.cursor.execute(sql)
+                    respuesta = self.cursor.fetchall()
+            
+                    return respuesta #Todos los registros
+
+                except Exception as e:
+                    raise
+
+            if len(r) == 3:
+                sql = f"""SELECT * FROM documento WHERE {r[0]} = "{busqueda[nn[0]]}" AND {r[1]} = "{busqueda[nn[1]]}" AND
+                {r[2]} = "{busqueda[nn[2]]}" """
+                try:
+                    self.cursor.execute(sql)
+                    respuesta = self.cursor.fetchall()
+            
+                    return respuesta #Todos los registros
+
+                except Exception as e:
+                    raise
+            
+            if len(r) == 4:
+                sql = f"""SELECT * FROM documento WHERE {r[0]} = "{busqueda[nn[0]]}" AND {r[1]} = "{busqueda[nn[1]]}" AND
+                {r[2]} = "{busqueda[nn[2]]}" AND {r[3]} = "{busqueda[nn[3]]}" """
+                try:
+                    self.cursor.execute(sql)
+                    respuesta = self.cursor.fetchall()
+            
+                    return respuesta #Todos los registros
+
+                except Exception as e:
+                    raise
+
+        else:
+            sql = f"""SELECT * FROM documento"""
+            try:
+                self.cursor.execute(sql)
+                respuesta = self.cursor.fetchall()
+            
+                return respuesta #Todos los registros
+
+            except Exception as e:
+                raise
+
     def insertar_documento(self, id_doc1, emisor, receptor, proveido, motivo, palabra_clave, tipo_documento):
         sql = f"""INSERT INTO documento (id_doc, emisor, receptor, proveido, motivo, palabra_clave, tipo_documento) 
         VALUES ("{id_doc1}", "{emisor}", "{receptor}","{proveido}", "{motivo}","{palabra_clave}", "{tipo_documento}");"""

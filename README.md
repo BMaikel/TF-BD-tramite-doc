@@ -16,6 +16,8 @@ Este prototipo es parte del trabajo final del curso: Sistema de Gestión de Base
 
 ![](/img_readme/inicio.PNG)
 
+![](/img_readme/inicio_1.PNG)
+
 ![](/img_readme/Login.PNG)
 
 ![](/img_readme/dashboard.PNG)
@@ -23,6 +25,8 @@ Este prototipo es parte del trabajo final del curso: Sistema de Gestión de Base
 ![](/img_readme/registrar.PNG)
  
 ![](/img_readme/buscar.PNG)
+
+![](/img_readme/buscar_1.PNG)
 
 ## PASOS PARA PROBAR EL PROYECTO:
 
@@ -40,7 +44,7 @@ Este prototipo es parte del trabajo final del curso: Sistema de Gestión de Base
 
 6. Ingresar a: [](http://127.0.0.1:5000/login). Es aquí donde se despliega el proyecto.
 
-7. Podemos empezar a probar las primeras funcionalidades del prototipo, como la busqueda de usuarios registrados en la base de datos, insertar un documento en la base de datos, etc.
+7. Podemos empezar a probar las primeras funcionalidades del prototipo, como la busqueda de usuarios registrados en la base de datos, insertar un documento en la base de datos, buscar documentos por motivo, emisor, tipo de documento, etc.
 
 8. Para salir, primero debes desactivar el entorno virtual.
 ~~~ python

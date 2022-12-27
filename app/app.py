@@ -10,9 +10,20 @@ database = Database()
 def index():   
     return render_template("index.html")
 
-@app.route("/buscar")
-def buscar():   
-    return render_template("buscar.html")
+@app.route("/buscar", methods = ["GET", "POST"])
+def buscar():
+    ver_docs = database.mostrar_documentos()
+
+    if request.method == "POST":
+        motivo = request.form["motivo"]
+        remitente = request.form["remitente"]
+        t_documento = request.form["tipo_documento"]
+        p_clave = request.form["palabra_clave"]
+        busqueda = [motivo, remitente, t_documento, p_clave]
+        b_docs = database.buscar_documento(busqueda)
+        return render_template("buscar.html", data = [b_docs])
+
+    return render_template("buscar.html", data = [ver_docs])
 
 #LOGIN ------------------------------------------------------------
 @app.route("/login", methods = ["GET", "POST"])
