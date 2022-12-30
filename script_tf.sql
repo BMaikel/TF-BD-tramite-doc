@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS bd_trabajofinal;
+CREATE DATABASE bd_trabajofinal CHARACTER SET utf8mb4;
+USE bd_trabajofinal;
+
 CREATE TABLE tipo_empleado (id_tipoEmp VARCHAR(10) NOT NULL, 
 tipo VARCHAR(20) NOT NULL , PRIMARY KEY (id_tipoEmp));
 
@@ -73,9 +77,8 @@ VALUES ('TD1', 'FÏSICO'), ('TD2', 'VIRTUAL') ;
 INSERT INTO `tipo_clave` (`id_tipoClave`, `tipo`) 
 VALUES ('C1', 'NORMATIVA'), ('C2', 'SOLICITUD') ;
 
-
 INSERT INTO `documento` (`id_doc`, `emisor`, `receptor`,`proveido`, `motivo`,`palabra_clave`, `tipo_documento`) 
 VALUES ('DOC1', 'Perez', 'Alex Flores', 'SISTEMAS', 'Solicitud de entrevista', 'C2','TD1'),
 ('DOC2', 'Jorge', 'Alex Flores', 'VENTAS', 'Solicitud de entrevista', 'C2','TD1');
 
-SELECT * FROM usuario WHERE user = "andre";
+/* SELECT * FROM usuario WHERE user = "andre"; */
