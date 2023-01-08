@@ -62,20 +62,20 @@ VALUES ('A1', 'SECRETARÍA'), ('A2', 'SISTEMAS');
 INSERT INTO tipo_empleado (id_tipoEmp, tipo) 
 VALUES ('TE1', 'JEFE'), ('TE2', 'EMPLEADO');
 
-INSERT INTO empleado (id_emp, nombre, apellido, id_tipoEmp) 
-VALUES ('E1', 'ALEX', 'FLORES', 'TE2'), ('E2', 'ANDRÉ', 'CASTILLO', 'TE2')
-
-INSERT INTO `usuario` (`id_usuario`, `user`, `pass`, `id_emp`, `id_area`) 
-VALUES ('U1', 'alex', 'alex', 'E1', 'A1'), ('U2', 'andre', 'andre', 'E2', 'A1');
-
-INSERT INTO `empleado` (`id_emp`, `nombre`, `apellido`, `id_tipoEmp`) 
-VALUES ('E3', 'MICHEL', 'BAÑARES', 'TE2')
+INSERT INTO `tipo_clave` (`id_tipoClave`, `tipo`) 
+VALUES ('C1', 'NORMATIVA'), ('C2', 'SOLICITUD') ;
 
 INSERT INTO `tipo_documento` (`id_tipoDoc`, `tipo`) 
 VALUES ('TD1', 'FÏSICO'), ('TD2', 'VIRTUAL') ;
 
-INSERT INTO `tipo_clave` (`id_tipoClave`, `tipo`) 
-VALUES ('C1', 'NORMATIVA'), ('C2', 'SOLICITUD') ;
+INSERT INTO empleado (id_emp, nombre, apellido, id_tipoEmp) 
+VALUES ('E1', 'ALEX', 'FLORES', 'TE2'), ('E2', 'ANDRÉ', 'CASTILLO', 'TE2')
+
+INSERT INTO `empleado` (`id_emp`, `nombre`, `apellido`, `id_tipoEmp`) 
+VALUES ('E3', 'MICHEL', 'BAÑARES', 'TE2')
+
+INSERT INTO `usuario` (`id_usuario`, `user`, `pass`, `id_emp`, `id_area`) 
+VALUES ('U1', 'alex', 'alex', 'E1', 'A1'), ('U2', 'andre', 'andre', 'E2', 'A1');
 
 INSERT INTO `documento` (`id_doc`, `emisor`, `receptor`,`proveido`, `motivo`,`palabra_clave`, `tipo_documento`) 
 VALUES ('DOC1', 'Perez', 'Alex Flores', 'SISTEMAS', 'Solicitud de entrevista', 'C2','TD1'),
